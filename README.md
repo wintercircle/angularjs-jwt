@@ -76,7 +76,7 @@ angular
 ```
 angular.controller(['jwtAuthentication', function(jwtAuthentication) {
   // will setAccessToken & setRefreshToken from data.accessToken/refreshToken
-  jwtAuthentication.login(username, password);
+  jwtAuthentication.login({username, password});
 }]);
 ```
 

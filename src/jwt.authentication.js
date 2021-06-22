@@ -12,9 +12,9 @@ export default function jwtAuthenticationProvider() {
   };
 
   this.$get = ['$http', 'jwtParceler', function jwtAuthenticationFactory($http, jwtParceler) {
-    function login(username, password) {
+    function login(params) {
       return $http
-        .post(jwtOptions.accessTokenURI, { username, password })
+        .post(jwtOptions.accessTokenURI, params)
         .then((arg) => {
           const { data } = arg;
 
