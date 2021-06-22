@@ -5,6 +5,8 @@ export default function jwtAuthenticationProvider() {
     accessTokenURI: '/api/accessToken',
     refreshTokenURI: '/api/refreshToken',
     redirect: '/auth/login',
+    accessToken: 'accessToken',
+    refreshToken: 'refreshToken',
   };
 
   this.changeOptions = (options) => {
@@ -18,8 +20,8 @@ export default function jwtAuthenticationProvider() {
         .then((arg) => {
           const { data } = arg;
 
-          jwtParceler.setAccessToken(data.accessToken);
-          jwtParceler.setRefreshToken(data.refreshToken);
+          jwtParceler.setAccessToken(data[jwtOptions.accessToken]);
+          jwtParceler.setRefreshToken(data[jwtOptions.refreshToken]);
           return data;
         });
     }
@@ -32,8 +34,8 @@ export default function jwtAuthenticationProvider() {
         .then((arg) => {
           const { data } = arg;
 
-          jwtParceler.setAccessToken(data.accessToken);
-          jwtParceler.setRefreshToken(data.refreshToken);
+          jwtParceler.setAccessToken(data[jwtOptions.accessToken]);
+          jwtParceler.setRefreshToken(data[jwtOptions.refreshToken]);
           // console.log('Fetch refresh token complete.');
           return data;
         });

@@ -36,6 +36,8 @@ describe('jwt.authentication', () => {
     chai.assert.equal(jwtAuthentication.config.accessTokenURI, '/api/accessToken');
     chai.assert.equal(jwtAuthentication.config.refreshTokenURI, '/api/refreshToken');
     chai.assert.equal(jwtAuthentication.config.redirect, '/auth/login');
+    chai.assert.equal(jwtAuthentication.config.accessToken, 'accessToken');
+    chai.assert.equal(jwtAuthentication.config.refreshToken, 'refreshToken');
   });
 
   it('accessToken is undefined', () => {
